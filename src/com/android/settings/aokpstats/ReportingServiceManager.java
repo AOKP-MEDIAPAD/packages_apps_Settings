@@ -27,11 +27,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
-import android.os.IBinder;
-import android.os.ServiceManager;
-import android.os.Parcel;
-import android.os.RemoteException;
-
 public class ReportingServiceManager extends BroadcastReceiver {
 
     public static final long dMill = 24 * 60 * 60 * 1000;
@@ -43,24 +38,6 @@ public class ReportingServiceManager extends BroadcastReceiver {
             setAlarm(ctx);
         } else {
             launchService(ctx);
-        }
-	
-	disableOverlaysOption(1);
-    }
-
-
-    private void disableOverlaysOption(int status) {
-        try {
-            IBinder flinger = ServiceManager.getService("SurfaceFlinger");
-            if (flinger != null) {
-                Parcel data = Parcel.obtain();
-                data.writeInterfaceToken("android.ui.ISurfaceComposer");
-                final int disableOverlays = status; 
-                data.writeInt(disableOverlays);
-                flinger.transact(1008, data, null, 0);
-                data.recycle();
-            }
-        } catch (RemoteException ex) {
         }
     }
 
