@@ -38,4 +38,14 @@
          android:summary="@string/halo_reversed_summary"
          android:defaultValue="true" />
 
+    <Preference
+                android:title="@string/halo_custom_app_title"
+                android:summary="@string/halo_custom_app_summary">
+
+            <intent
++                android:action="android.intent.action.MAIN"
++                android:targetClass="com.paranoid.halo.MainActivity"
++                android:targetPackage="com.paranoid.halo" />
+      </PreferenceScreen>
+
 </PreferenceScreen>
