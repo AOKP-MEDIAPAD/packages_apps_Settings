@@ -70,6 +70,13 @@
                 android:targetClass="com.aokp.romcontrol.ROMControlActivity"
                 android:targetPackage="com.aokp.romcontrol" />
     </header>
+	 
+	<header
+        android:id="@+id/halo_settings"
+        android:title="@string/halo_settings_title"
+        android:breadCrumbTitle="@string/halo_settings_title"
+        android:fragment="com.android.settings.paranoid.Halo"
+        android:icon="@drawable/ic_rb_halo" />
 
     <!-- TRDS -->
     <header android:id="@+id/trds_settings"
