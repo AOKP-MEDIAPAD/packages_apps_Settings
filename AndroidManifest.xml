@@ -1557,7 +1557,10 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/display_settings" />
         </activity>
-
+        
+        <!-- HALO #PA-->
+        <activity android:name=".paranoid.Halo" />
+        
         <activity android:name="Settings$QuietHoursSettingsActivity"
                 android:label="@string/quiet_hours_title"
                 android:taskAffinity=""
