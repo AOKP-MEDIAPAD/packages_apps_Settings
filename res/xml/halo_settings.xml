@@ -43,9 +43,9 @@
                 android:summary="@string/halo_custom_app_summary">
 
             <intent
-+                android:action="android.intent.action.MAIN"
-+                android:targetClass="com.paranoid.halo.MainActivity"
-+                android:targetPackage="com.paranoid.halo" />
-      </PreferenceScreen>
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.paranoid.halo.MainActivity"
+                android:targetPackage="com.paranoid.halo" />
+      </Preference>
 
 </PreferenceScreen>
