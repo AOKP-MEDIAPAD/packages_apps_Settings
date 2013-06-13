@@ -16,6 +16,7 @@
 
 package com.android.settings.paranoid;
 
+import android.app.ActivityManager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.INotificationManager;
@@ -49,11 +50,13 @@ public class Halo extends SettingsPreferenceFragment
     private static final String KEY_HALO_STATE = "halo_state";
     private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
-
+    private static final String KEY_HALO_PAUSE = "halo_pause";
+    
     private ListPreference mHaloState;
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
-
+    private CheckBoxPreference mHaloPause;
+    
     private Context mContext;
     private INotificationManager mNotificationManager; 
 
@@ -67,6 +70,12 @@ public class Halo extends SettingsPreferenceFragment
         mNotificationManager = INotificationManager.Stub.asInterface(
                 ServiceManager.getService(Context.NOTIFICATION_SERVICE));
 
+
+        int isLowRAM = (ActivityManager.isLargeRAM()) ? 0 : 1;
+        mHaloPause = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_PAUSE);
+        mHaloPause.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HALO_PAUSE, isLowRAM) == 1);
+       
         mHaloState = (ListPreference) findPreference(KEY_HALO_STATE);
         mHaloState.setValue(String.valueOf((isHaloPolicyBlack() ? "1" : "0")));
         mHaloState.setOnPreferenceChangeListener(this);
@@ -99,7 +108,11 @@ public class Halo extends SettingsPreferenceFragment
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_REVERSED, mHaloReversed.isChecked()
                     ? 1 : 0);	
-        }	
+        } else if (preference == mHaloPause) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.HALO_PAUSE, mHaloPause.isChecked()
+                    ? 1 : 0);
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

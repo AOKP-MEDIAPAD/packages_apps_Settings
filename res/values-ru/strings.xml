@@ -1992,5 +1992,9 @@
     <string name="halo_state_white">Белый список</string>
 	<string name="halo_custom_app_title">Пользовательские приложения</string>
     <string name="halo_custom_app_summary">Быстрый доступ к приложениям из HALO</string>
+	 <string name="halo_pause_title">Пауза активного приложения</string>
+    <string name="halo_pause_summary">Когда открыто мультиокно, основной приложение приостанавливается ​​(включен по умолчанию на устройствах с низким RAM)</string>
+
+ 
 
 </resources>
