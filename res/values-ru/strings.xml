@@ -1987,7 +1987,10 @@
     <string name="halo_reversed_title">Инверсия жестов</string>
     <string name="halo_reversed_summary">Используйте двойной клик для выбора задачи или приложения</string>
     <string name="halo_state_title">Политика работы</string>
-    <string name="halo_state_summary">Выбор черный/белый списка приложений</string>
+    <string name="halo_state_summary">Выбор черного/белого списка приложений</string>
     <string name="halo_state_black">Черный список</string>
     <string name="halo_state_white">Белый список</string>
+	<string name="halo_custom_app_title">Пользовательские приложения</string>
+    <string name="halo_custom_app_summary">Быстрый доступ к приложениям из HALO</string>
+
 </resources>
