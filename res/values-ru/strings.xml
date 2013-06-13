@@ -1974,4 +1974,20 @@
     <string name="ok">OK</string>
     <string name="permissions_settings_title">Разрешения</string>
     <string name="trds_settings_title">Тёмный AOKP</string>
+	
+	<!-- Label for are-notifications-enabled checkbox in app details [CHAR LIMIT=20] -->
+    <string name="app_halo_label_black">Черный список уведомлений HALO</string>
+    <string name="app_halo_label_white">Белый список уведомлений HALO</string>
+	
+	<!-- HALO #PA -->
+    <string name="halo_settings_title">Настройки HALO</string>
+    <string name="halo_settings_summary"></string>
+    <string name="halo_hide_title">Авто-скрыть</string>
+    <string name="halo_hide_summary">Мультиокно будет автоматически скрываться при клике вне его области</string>
+    <string name="halo_reversed_title">Инверсия жестов</string>
+    <string name="halo_reversed_summary">Используйте двойной клик для выбора задачи или приложения</string>
+    <string name="halo_state_title">Политика работы</string>
+    <string name="halo_state_summary">Выбор черный/белый списка приложений</string>
+    <string name="halo_state_black">Черный список</string>
+    <string name="halo_state_white">Белый список</string>
 </resources>
