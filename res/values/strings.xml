@@ -4708,6 +4708,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="profile_airplanemode_default_summary">Use system default</string>
     <string name="profile_airplanemode_enabled_summary">Airplane mode is enabled</string>
     <string name="profile_airplanemode_disabled_summary">Airplane mode is disabled</string>
+    <string name="profile_airplanemode_default">Default</string>
+    <string name="profile_airplanemode_enabled">Enabled</string>
+    <string name="profile_airplanemode_disabled">Disabled</string>
     <string name="vibrator_type_ringer">Calls</string>
     <string name="vibrator_type_notification">Notifications</string>
 
