@@ -4508,7 +4508,8 @@
     <string name="halo_custom_app_summary">Quick access to the applications of the HALO</string>
     <string name="halo_pause_title">HALO pause active app</string>
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused (enabled by default on low memory devices)</string>
-
+    <string name="halo_enabled_title">Enable HALO</string>
+    <string name="halo_enabled_summary">If checked enable HALO feature (floating window on recent apps would not be affected)</string>   
     
     <!-- time range preference -->
     <string name="start_time_title">Start</string>
