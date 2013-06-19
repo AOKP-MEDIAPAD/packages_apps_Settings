@@ -4745,5 +4745,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="profile_unknown_nfc_tag">Unknown profile</string>
     <string name="profile_add_nfc_text">This NFC tag refers to an unknown profile. Attaching this NFC tag to an existing profile will allow for selecting the profile in the future.</string>
     <string name="profile_select">Select profile</string>
-
+    <string name="profile_trigger_title_wifi">Wi-Fi triggers for <xliff:g id="profile">%s</xliff:g></string>
+    <string name="profile_trigger_configure">Configure trigger</string>
+    <string name="profile_trigger_wifi">Wi-Fi triggers</string>
 </resources>
