@@ -33,7 +33,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.net.wimax.WimaxHelper;
-import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -121,7 +120,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        if (NfcAdapter.getDefaultAdapter(getActivity()) != null) {
+        if (deviceSupportsNfc(getActivity())) {
             MenuItem nfc = menu.add(0, MENU_NFC_WRITE, 0, R.string.profile_write_nfc_tag)
                 .setIcon(R.drawable.ic_menu_nfc_writer_dark);
             nfc.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
@@ -394,7 +393,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
         } else {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
             alert.setTitle(R.string.profile_menu_delete);
-            alert.setIconAttribute(android.R.attr.alertDialogIcon);
+            alert.setIcon(android.R.drawable.ic_dialog_alert);
             alert.setMessage(R.string.profile_delete_confirm);
             alert.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
