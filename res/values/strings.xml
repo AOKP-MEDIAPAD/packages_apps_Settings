@@ -4512,6 +4512,8 @@
     <string name="halo_enabled_summary">If checked enable HALO feature (floating window on recent apps would not be affected)</string>   
     <string name="halo_active_title">Active HALO</string>
     <string name="halo_active_summary">Always show HALO window(need for TabletUI)</string>   
+	<string name="halo_hide_button_title">Hide button</string>
+    <string name="halo_hide_button_summary">Always hide notification HALO button </string> 
 
     <!-- time range preference -->
     <string name="start_time_title">Start</string>

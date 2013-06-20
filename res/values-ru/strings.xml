@@ -1998,6 +1998,8 @@
     <string name="halo_enabled_summary">Включение функции HALO</string>
     <string name="halo_active_title">Активировать</string>
     <string name="halo_active_summary">Всегда отображать мультиокно (для планшетного вида)</string>   
+	<string name="halo_hide_button_title">Скрыть кнопку</string>
+    <string name="halo_hide_button_summary">Скрыть кнопка активации HALO</string> 
 
     <!-- Profiles settings -->
     <string name="profiles_settings_title">Профили</string>
