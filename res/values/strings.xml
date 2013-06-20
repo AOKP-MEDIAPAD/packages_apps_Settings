@@ -4510,7 +4510,9 @@
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused (enabled by default on low memory devices)</string>
     <string name="halo_enabled_title">Enable HALO</string>
     <string name="halo_enabled_summary">If checked enable HALO feature (floating window on recent apps would not be affected)</string>   
-    
+    <string name="halo_active_title">Active HALO</string>
+    <string name="halo_active_summary">Always show HALO window(need for TabletUI)</string>   
+
     <!-- time range preference -->
     <string name="start_time_title">Start</string>
     <string name="end_time_title">End</string>

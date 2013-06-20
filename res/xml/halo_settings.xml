@@ -23,6 +23,12 @@
             android:title="@string/halo_enabled_title"
             android:summary="@string/halo_enabled_summary" />
 
+     <CheckBoxPreference
+            android:key="halo_active"
+            android:title="@string/halo_active_title"
+            android:summary="@string/halo_active_summary"
+             android:dependency="halo_enabled" />
+
      <ListPreference
          android:key="halo_state"
          android:dialogTitle="@string/halo_state_title"
