@@ -4514,7 +4514,14 @@
     <string name="halo_active_summary">Always show HALO window(need for TabletUI)</string>   
 	<string name="halo_hide_button_title">Hide button</string>
     <string name="halo_hide_button_summary">Always hide notification HALO button </string> 
-
+    <string name="halo_colors_title">Custom colors</string>
+    <string name="halo_colors_summary">Enable custom colors for HALO instead of the default theme colors</string>
+    <string name="halo_circle_color_title">Circle color</string>
+    <string name="halo_bubble_color_title">Speech bubble color</string>
+    <string name="halo_bubble_text_color_title">Speech bubble text color</string>
+    <string name="halo_effect_color_title">Effect color</string>
+    <string name="halo_effect_color_summary">Requires a systemui restart</string>
+    
     <!-- time range preference -->
     <string name="start_time_title">Start</string>
     <string name="end_time_title">End</string>
