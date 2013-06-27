@@ -52,13 +52,17 @@ public class Halo extends SettingsPreferenceFragment
     private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
     private static final String KEY_HALO_PAUSE = "halo_pause";
+    private static final String KEY_HALO_ACTIVE = "halo_active";
+    private static final String KEY_HALO_HIDE_BUTTON = "halo_hide_button";
 
     private CheckBoxPreference mHaloEnabled;
+    private CheckBoxPreference mHaloActive;
     private ListPreference mHaloState;
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
     private CheckBoxPreference mHaloPause;
-    
+    private CheckBoxPreference mHaloHideButton;
+        
     private Context mContext;
     private INotificationManager mNotificationManager; 
 
@@ -75,6 +79,14 @@ public class Halo extends SettingsPreferenceFragment
 		mHaloEnabled = (CheckBoxPreference) findPreference(KEY_HALO_ENABLED);
         mHaloEnabled.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_ENABLED, 0) == 1);
+
+        mHaloActive = (CheckBoxPreference) findPreference(KEY_HALO_ACTIVE);
+        mHaloActive.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                 Settings.System.HALO_ACTIVE, 0) == 1);
+
+        mHaloHideButton = (CheckBoxPreference) findPreference( KEY_HALO_HIDE_BUTTON);
+        mHaloHideButton.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                 Settings.System.HALO_HIDE_BUTTON, 0) == 1);
 
         int isLowRAM = (ActivityManager.isLargeRAM()) ? 0 : 1;
         mHaloPause = (CheckBoxPreference) findPreference(KEY_HALO_PAUSE);
@@ -120,6 +132,14 @@ public class Halo extends SettingsPreferenceFragment
         } else if  (preference == mHaloEnabled) {
              Settings.System.putInt(mContext.getContentResolver(),
                    Settings.System.HALO_ENABLED, mHaloEnabled.isChecked()
+                    ? 1 : 0);
+        } else if  (preference == mHaloActive) {
+             Settings.System.putInt(mContext.getContentResolver(),
+                   Settings.System.HALO_ACTIVE, mHaloActive.isChecked()
+                    ? 1 : 0);
+        } else if  (preference == mHaloHideButton) {
+             Settings.System.putInt(mContext.getContentResolver(),
+                   Settings.System.HALO_HIDE_BUTTON, mHaloHideButton.isChecked()
                     ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
