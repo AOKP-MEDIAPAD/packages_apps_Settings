@@ -394,7 +394,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
         } else {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
             alert.setTitle(R.string.profile_menu_delete);
-            alert.setIcon(android.R.drawable.ic_dialog_alert);
+            alert.setIconAttribute(android.R.attr.alertDialogIcon);
             alert.setMessage(R.string.profile_delete_confirm);
             alert.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
@@ -441,6 +441,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
     }
 
     static class SilentModeItem {
+        String mLabel;
         SilentModeSettings mSettings;
         ProfileSilentModePreference mCheckbox;
 
@@ -450,6 +451,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
     }
 
     static class AirplaneModeItem {
+        String mLabel;
         AirplaneModeSettings mSettings;
         ProfileAirplaneModePreference mCheckbox;
 
