@@ -4730,6 +4730,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="profile_airplanemode_default">Default</string>
     <string name="profile_airplanemode_enabled">Enabled</string>
     <string name="profile_airplanemode_disabled">Disabled</string>
+
+    <!-- Profile network mode -->
+    <string name="profile_networkmode_2g">2G</string>
+    <string name="profile_networkmode_3g">3G</string>
+    <string name="profile_networkmode_2g3g">2G/3G</string>
+
     <string name="vibrator_type_ringer">Calls</string>
     <string name="vibrator_type_notification">Notifications</string>
 

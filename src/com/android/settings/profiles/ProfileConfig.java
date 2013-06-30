@@ -31,6 +31,7 @@ import android.app.admin.DevicePolicyManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.net.wimax.WimaxHelper;
 import android.nfc.NfcAdapter;
@@ -40,6 +41,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -99,6 +101,18 @@ public class ProfileConfig extends SettingsPreferenceFragment
         mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFI, getString(R.string.toggleWifi)));
         mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_SYNC, getString(R.string.toggleSync)));
         mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFIAP, getString(R.string.toggleWifiAp)));
+
+        PackageManager pm = getActivity().getPackageManager();
+        boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
+        if (isMobileData) {
+            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_MOBILEDATA, getString(R.string.toggleData)));
+            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFIAP, getString(R.string.toggleWifiAp)));
+            final TelephonyManager tm = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+            if (tm.getPhoneType() == TelephonyManager.PHONE_TYPE_GSM) {
+                mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_2G3G, getString(R.string.toggle2g3g), R.array.profile_networkmode_entries));
+            }
+        }
+        
         if (WimaxHelper.isWimaxSupported(getActivity())) {
             mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIMAX, getString(R.string.toggleWimax)));
         }
@@ -293,6 +307,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
         if (connectionList != null) {
             connectionList.removeAll();
             for (ConnectionItem connection : mConnections) {
+                String[] connectionstrings = getResources().getStringArray(connection.mChoices);
                 ConnectionSettings settings = mProfile.getSettingsForConnection(connection.mConnectionId);
                 if (settings == null) {
                     settings = new ConnectionSettings(connection.mConnectionId);
@@ -302,8 +317,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
                 ProfileConnectionPreference pref = new ProfileConnectionPreference(getActivity());
                 pref.setKey("connection_" + connection.mConnectionId);
                 pref.setTitle(connection.mLabel);
-                pref.setSummary(settings.getValue() == 1 ? getString(R.string.connection_state_enabled) 
-                        : getString(R.string.connection_state_disabled));
+                pref.setSummary(connectionstrings[settings.getValue()]);
                 pref.setPersistent(false);
                 pref.setConnectionItem(connection);
                 connection.mCheckbox = pref;
@@ -394,7 +408,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
         } else {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
             alert.setTitle(R.string.profile_menu_delete);
-            alert.setIcon(android.R.drawable.ic_dialog_alert);
+            alert.setIconAttribute(android.R.attr.alertDialogIcon);
             alert.setMessage(R.string.profile_delete_confirm);
             alert.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
@@ -433,14 +447,23 @@ public class ProfileConfig extends SettingsPreferenceFragment
         String mLabel;
         ConnectionSettings mSettings;
         ProfileConnectionPreference mCheckbox;
+        int mChoices;
 
         public ConnectionItem(int connectionId, String label) {
             mConnectionId = connectionId;
+            mChoices = R.array.profile_connection_entries;
             mLabel = label;
+        }
+
+        public ConnectionItem(int connectionId, String label, int choices) {
+            mConnectionId = connectionId;
+            mLabel = label;
+            mChoices = choices;
         }
     }
 
     static class SilentModeItem {
+        String mLabel;
         SilentModeSettings mSettings;
         ProfileSilentModePreference mCheckbox;
 
@@ -450,6 +473,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
     }
 
     static class AirplaneModeItem {
+        String mLabel;
         AirplaneModeSettings mSettings;
         ProfileAirplaneModePreference mCheckbox;
 
