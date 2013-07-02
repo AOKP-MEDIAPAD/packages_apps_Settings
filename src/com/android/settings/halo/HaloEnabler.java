@@ -56,7 +56,7 @@ public class HaloEnabler implements CompoundButton.OnCheckedChangeListener {
     }
 
     private void setSwitchState() {
-        boolean enabled = Settings.Secure.getInt(mContext.getContentResolver(),
+        boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_ENABLED, 0) == 1;
 
         mStateMachineEvent = true;
@@ -69,9 +69,9 @@ public class HaloEnabler implements CompoundButton.OnCheckedChangeListener {
             return;
         }
         // Handle a switch change
-        Settings.Secure.putInt(mContext.getContentResolver(),
+        Settings.System.putInt(mContext.getContentResolver(),
                 Settings.System.HALO_ENABLED, isChecked ? 1 : 0);
-		Settings.Secure.putInt(mContext.getContentResolver(),
+		Settings.System.putInt(mContext.getContentResolver(),
                 Settings.System.HALO_ACTIVE, isChecked ? 1 : 0);
 				
         Helpers.restartSystemUI();
