@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2013 ParanoidAndroid Project
+ * Copyright (C) 2013 AOKPZMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.paranoid;
+package com.android.settings.halo;
 
 import android.app.ActivityManager;
 import android.app.Activity;

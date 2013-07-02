@@ -18,6 +18,8 @@
     android:title="@string/halo_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:title="@string/halo_generel_title">
     <CheckBoxPreference
             android:key="halo_enabled"
             android:title="@string/halo_enabled_title"
@@ -29,12 +31,16 @@
             android:summary="@string/halo_active_summary"
              android:dependency="halo_enabled" />
 
+     </PreferenceCategory>
+     
      <CheckBoxPreference
             android:key="halo_hide_button"
             android:title="@string/halo_hide_button_title"
             android:summary="@string/halo_hide_button_summary"
             android:dependency="halo_enabled" />
 
+     <PreferenceCategory
+        android:title="@string/halo_interface_title">
      <ListPreference
          android:key="halo_state"
          android:dialogTitle="@string/halo_state_title"
@@ -63,6 +69,12 @@
             android:title="@string/halo_pause_title"
             android:summary="@string/halo_pause_summary"
             android:dependency="halo_enabled" />
+
+     
+     </PreferenceCategory>
+
+     <PreferenceCategory
+        android:title="@string/halo_color_ui_title">
 
         <CheckBoxPreference
             android:key="halo_colors"
@@ -99,15 +111,17 @@
             android:dependency="halo_colors"
             android:defaultValue="0xFFFFFFFF" />
 
-    <Preference
-                android:title="@string/halo_custom_app_title"
-                android:summary="@string/halo_custom_app_summary"
-                android:dependency="halo_enabled" >
+       </PreferenceCategory>
 
+      <PreferenceCategory
+        android:title="@string/halo_misc_title"> 
+       	<Preference
+                android:title="@string/halo_custom_app_title"
+                android:summary="@string/halo_custom_app_summary">
             <intent
                 android:action="android.intent.action.MAIN"
                 android:targetClass="com.paranoid.halo.MainActivity"
                 android:targetPackage="com.paranoid.halo" />
-      </Preference>
-
+      	</Preference>
+ 	  </PreferenceCategory>
 </PreferenceScreen>

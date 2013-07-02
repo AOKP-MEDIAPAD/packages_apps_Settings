@@ -1559,7 +1559,7 @@
         </activity>
         
         <!-- HALO #PA-->
-        <activity android:name=".paranoid.Halo" />
+        <activity android:name=".halo.Halo" />
         
         <activity android:name="Settings$QuietHoursSettingsActivity"
                 android:label="@string/quiet_hours_title"
