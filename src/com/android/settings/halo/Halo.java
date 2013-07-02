@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2013 ParanoidAndroid Project
+ * Copyright (C) 2013 AOKPZMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.paranoid;
+package com.android.settings.halo;
 
 import android.app.ActivityManager;
 import android.app.Activity;
@@ -48,7 +49,6 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class Halo extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-    private static final String KEY_HALO_ENABLED = "halo_enabled";
     private static final String KEY_HALO_STATE = "halo_state";
     private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
@@ -62,7 +62,6 @@ public class Halo extends SettingsPreferenceFragment
     private static final String PREF_HALO_BUBBLE_TEXT_COLOR = "halo_bubble_text_color";
 
 
-    private CheckBoxPreference mHaloEnabled;
     private CheckBoxPreference mHaloActive;
     private ListPreference mHaloState;
     private CheckBoxPreference mHaloHide;
@@ -88,9 +87,6 @@ public class Halo extends SettingsPreferenceFragment
         mNotificationManager = INotificationManager.Stub.asInterface(
                 ServiceManager.getService(Context.NOTIFICATION_SERVICE));
 
-		mHaloEnabled = (CheckBoxPreference) findPreference(KEY_HALO_ENABLED);
-        mHaloEnabled.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.HALO_ENABLED, 0) == 1);
 
         mHaloActive = (CheckBoxPreference) findPreference(KEY_HALO_ACTIVE);
         mHaloActive.setChecked(Settings.System.getInt(mContext.getContentResolver(),
@@ -155,10 +151,6 @@ public class Halo extends SettingsPreferenceFragment
         } else if (preference == mHaloPause) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_PAUSE, mHaloPause.isChecked()
-                    ? 1 : 0);
-        } else if  (preference == mHaloEnabled) {
-             Settings.System.putInt(mContext.getContentResolver(),
-                   Settings.System.HALO_ENABLED, mHaloEnabled.isChecked()
                     ? 1 : 0);
         } else if  (preference == mHaloActive) {
              Settings.System.putInt(mContext.getContentResolver(),

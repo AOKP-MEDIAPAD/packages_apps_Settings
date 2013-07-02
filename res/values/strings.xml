@@ -4510,8 +4510,8 @@
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused (enabled by default on low memory devices)</string>
     <string name="halo_enabled_title">Enable HALO</string>
     <string name="halo_enabled_summary">If checked enable HALO feature (floating window on recent apps would not be affected)</string>   
-    <string name="halo_active_title">Active HALO</string>
-    <string name="halo_active_summary">Always show HALO window(need for TabletUI)</string>   
+    <string name="halo_active_title">Show</string>
+    <string name="halo_active_summary">Always show HALO window</string>   
 	<string name="halo_hide_button_title">Hide button</string>
     <string name="halo_hide_button_summary">Always hide notification HALO button </string> 
     <string name="halo_colors_title">Custom colors</string>
@@ -4521,6 +4521,10 @@
     <string name="halo_bubble_text_color_title">Speech bubble text color</string>
     <string name="halo_effect_color_title">Effect color</string>
     <string name="halo_effect_color_summary">Requires a systemui restart</string>
+    <string name="halo_general_title">General</string>
+    <string name="halo_interface_title">Interface</string>
+    <string name="halo_color_ui_title">Colors</string>
+    <string name="halo_misc_title">Misc</string>
     
     <!-- time range preference -->
     <string name="start_time_title">Start</string>
