@@ -1996,10 +1996,21 @@
     <string name="halo_pause_summary">Когда открыто мультиокно, основное приложение приостанавливается ​​(включено по умолчанию на устройствах с низким RAM)</string>
 	<string name="halo_enabled_title">Включить</string>
     <string name="halo_enabled_summary">Включение функции HALO</string>
-    <string name="halo_active_title">Активировать</string>
-    <string name="halo_active_summary">Всегда отображать мультиокно (для планшетного вида)</string>   
+    <string name="halo_active_title">Показать</string>
+    <string name="halo_active_summary">Всегда отображать мультиокно</string>   
 	<string name="halo_hide_button_title">Скрыть кнопку</string>
     <string name="halo_hide_button_summary">Скрыть кнопку активации HALO</string> 
+    <string name="halo_colors_title">Свой цвет</string>
+    <string name="halo_colors_summary">Включить свои цвета для элементов мультиокна</string>
+    <string name="halo_circle_color_title">Цвет круга</string>
+    <string name="halo_bubble_color_title">Цвет фона сообщения</string>
+    <string name="halo_bubble_text_color_title">Цвет текста сообщения</string>
+    <string name="halo_effect_color_title">Цвет эффекта</string>
+    <string name="halo_effect_color_summary"></string>
+    <string name="halo_general_title">Основные</string>
+    <string name="halo_interface_title">Интерфейс</string>
+    <string name="halo_color_ui_title">Цвета</string>
+    <string name="halo_misc_title">Разное</string>
 
     <!-- Profiles settings -->
     <string name="profiles_settings_title">Профили</string>
@@ -2107,5 +2118,9 @@
     <string name="toggleFlashlight">Фонарик</string>
     <string name="toggleLockScreen">Блокировка</string>
  
-
+	<!-- MediaScanner behavior on boot -->
+    <string name="media_scanner_on_boot_title">Поведение MediaScanner  при загрузке</string>
+    <string name="media_scanner_on_boot_enabled">Сканирование медиа</string>
+    <string name="media_scanner_on_boot_ask">Запрос на сканирование</string>
+    <string name="media_scanner_on_boot_disabled">Отключить</string>
 </resources>
