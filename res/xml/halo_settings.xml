@@ -21,16 +21,6 @@
     <PreferenceCategory
         android:title="@string/halo_general_title">
 
-     </PreferenceCategory>
-     
-     <CheckBoxPreference
-            android:key="halo_hide_button"
-            android:title="@string/halo_hide_button_title"
-            android:summary="@string/halo_hide_button_summary"
-            />
-
-     <PreferenceCategory
-        android:title="@string/halo_interface_title">
      <ListPreference
          android:key="halo_state"
          android:dialogTitle="@string/halo_state_title"
