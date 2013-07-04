@@ -83,6 +83,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_POWER_INSTANTLY_LOCKS = "power_button_instantly_locks";
     private static final String KEY_CREDENTIALS_MANAGER = "credentials_management";
     private static final String PACKAGE_MIME_TYPE = "application/vnd.android.package-archive";
+    private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
 
     // Cyanogenmod Additions
     private static final String SLIDE_LOCK_DELAY_TOGGLE = "slide_lock_delay_toggle";
@@ -92,7 +93,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String HOME_UNLOCK_PREF = "home_unlock";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
-    private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
     private static final String KEY_PRIVACY_GUARD_DEFAULT = "privacy_guard_default";
     private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
 
@@ -394,7 +394,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
             } else {
                 mToggleVerifyApps.setEnabled(false);
             }
-            }
+        }
 
             // App security settings
             addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
@@ -417,7 +417,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
             } catch (SettingNotFoundException e) {
                 mPrivacyGuardDefault.setChecked(false);
             }
-        }
 
         return root;
     }
