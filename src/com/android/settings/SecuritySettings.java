@@ -126,7 +126,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mMenuUnlock;
     private CheckBoxPreference mHomeUnlock;
     private CheckBoxPreference mQuickUnlockScreen;
-    private ListPreference mSmsSecurityCheck;
     private CheckBoxPreference mPrivacyGuardDefault;
 
     @Override
