@@ -53,21 +53,16 @@ public class Halo extends SettingsPreferenceFragment
     private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
     private static final String KEY_HALO_PAUSE = "halo_pause";
-    private static final String KEY_HALO_ACTIVE = "halo_active";
-    private static final String KEY_HALO_HIDE_BUTTON = "halo_hide_button";
     private static final String PREF_HALO_COLORS = "halo_colors";
     private static final String PREF_HALO_CIRCLE_COLOR = "halo_circle_color";
     private static final String PREF_HALO_EFFECT_COLOR = "halo_effect_color";
     private static final String PREF_HALO_BUBBLE_COLOR = "halo_bubble_color";
     private static final String PREF_HALO_BUBBLE_TEXT_COLOR = "halo_bubble_text_color";
 
-
-    private CheckBoxPreference mHaloActive;
     private ListPreference mHaloState;
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
     private CheckBoxPreference mHaloPause;
-    private CheckBoxPreference mHaloHideButton;
     private CheckBoxPreference mHaloColors;
     private ColorPickerPreference mHaloCircleColor;
     private ColorPickerPreference mHaloEffectColor;
@@ -87,14 +82,6 @@ public class Halo extends SettingsPreferenceFragment
         mNotificationManager = INotificationManager.Stub.asInterface(
                 ServiceManager.getService(Context.NOTIFICATION_SERVICE));
 
-
-        mHaloActive = (CheckBoxPreference) findPreference(KEY_HALO_ACTIVE);
-        mHaloActive.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                 Settings.System.HALO_ACTIVE, 0) == 1);
-
-        mHaloHideButton = (CheckBoxPreference) findPreference( KEY_HALO_HIDE_BUTTON);
-        mHaloHideButton.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                 Settings.System.HALO_HIDE_BUTTON, 0) == 1);
 
         int isLowRAM = (ActivityManager.isLargeRAM()) ? 0 : 1;
         mHaloPause = (CheckBoxPreference) findPreference(KEY_HALO_PAUSE);
@@ -152,15 +139,7 @@ public class Halo extends SettingsPreferenceFragment
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_PAUSE, mHaloPause.isChecked()
                     ? 1 : 0);
-        } else if  (preference == mHaloActive) {
-             Settings.System.putInt(mContext.getContentResolver(),
-                   Settings.System.HALO_ACTIVE, mHaloActive.isChecked()
-                    ? 1 : 0);
-        } else if  (preference == mHaloHideButton) {
-             Settings.System.putInt(mContext.getContentResolver(),
-                   Settings.System.HALO_HIDE_BUTTON, mHaloHideButton.isChecked()
-                    ? 1 : 0);
-        }else if (preference == mHaloColors) {
+        } else if (preference == mHaloColors) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_COLORS, mHaloColors.isChecked()
                     ? 1 : 0);
