@@ -2011,7 +2011,15 @@
     <string name="halo_interface_title">Интерфейс</string>
     <string name="halo_color_ui_title">Цвета</string>
     <string name="halo_misc_title">Разное</string>
-
+    <string name="halo_size_title">Размер</string>
+    <string name="halo_size_summary">Изменяет размер HALO</string>
+    <string name="halo_size_miniscule">Очень маленькое</string>
+    <string name="halo_size_small">Маленькое</string>
+    <string name="halo_size_default">По умолчанию</string>
+    <string name="halo_size_large">Большое</string>
+    <string name="halo_size_gigantic">Очень большое</string>
+    <string name="halo_size_monster">Огромное</string>
+	
     <!-- Profiles settings -->
     <string name="profiles_settings_title">Профили</string>
     <string name="profiles_general_title">Основные</string>
