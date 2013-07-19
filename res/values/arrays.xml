@@ -891,10 +891,25 @@
         <item>Enable</item>
     </string-array>
 
+    <!-- Profile 2G-3G mode options. -->
+    <string-array name="profile_networkmode_entries" translatable="false">
+        <item>@string/profile_networkmode_2g</item>
+        <item>@string/profile_networkmode_3g</item>
+        <item>@string/profile_networkmode_2g3g</item>
+    </string-array>
+
     <!-- Values for profile connections. Do not translate. -->
     <string-array name="profile_connection_values" translatable="false">
         <item>0</item>
         <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!--  Values for profile Wi-Fi triggers -->
+    <string-array name="profile_trigger_wifi_options" translatable="false">
+        <item>@string/profile_trigger_connect</item>
+        <item>@string/profile_trigger_disconnect</item>
+        <item>@string/profile_trigger_notrigger</item>
     </string-array>
 
     <!-- Profile lock mode options. Do not translate. -->
@@ -917,7 +932,6 @@
         <item>1</item>
         <item>2</item>
     </string-array>
-
 
     <!-- Profile airplane mode options. Do not translate. -->
     <string-array name="profile_airplanemode_entries" translatable="false">
@@ -954,4 +968,64 @@
         <item>mute</item>
     </string-array>
 
+    <!--  Values for profile Wi-Fi triggers -->
+    <string-array name="profile_trigger_wifi_options" translatable="false">
+        <item>@string/profile_trigger_connect</item>
+        <item>@string/profile_trigger_disconnect</item>
+        <item>@string/profile_trigger_notrigger</item>
+    </string-array>
+    
+    <string-array name="lockscreen_delay_entries" translatable="false">
+        <item>@string/slide_lock_delay_none</item>
+        <item>@string/slide_lock_delay_1s</item>
+        <item>@string/slide_lock_delay_5s</item>
+        <item>@string/slide_lock_delay_10s</item>
+        <item>@string/slide_lock_delay_15s</item>
+        <item>@string/slide_lock_delay_30s</item>
+        <item>@string/slide_lock_delay_1m</item>
+        <item>@string/slide_lock_delay_5m</item>
+        <item>@string/slide_lock_delay_10m</item>
+        <item>@string/slide_lock_delay_30m</item>
+    </string-array>
+
+    <string-array name="lockscreen_delay_values" translatable="false">
+        <item>0</item>
+        <item>1000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>300000</item>
+        <item>600000</item>
+        <item>1800000</item>
+    </string-array>
+
+    <string-array name="location_entries_gps_source">
+        <item>Use Internal GPS</item>
+    </string-array>
+
+    <string-array name="location_values_gps_source" translatable="false">
+        <item>0</item>
+    </string-array>
+
+    <string-array name="entries_halo_size">
+        <item>@string/halo_size_miniscule</item>
+        <item>@string/halo_size_small</item>
+        <item>@string/halo_size_default</item>
+        <item>@string/halo_size_large</item>
+        <item>@string/halo_size_gigantic</item>
+        <item>@string/halo_size_monster</item>
+    </string-array>
+
+    <string-array name="values_halo_size" translatable="false">
+        <item>0.6</item>
+        <item>0.8</item>
+        <item>1.0</item>
+        <item>1.2</item>
+        <item>1.4</item>
+        <item>1.6</item>
+    </string-array>
+    
 </resources>
+

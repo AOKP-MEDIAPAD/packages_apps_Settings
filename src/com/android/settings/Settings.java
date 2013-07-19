@@ -28,6 +28,7 @@ import com.android.settings.deviceinfo.Memory;
 import com.android.settings.fuelgauge.PowerUsageSummary;
 import com.android.settings.TRDSEnabler;
 import com.android.settings.profiles.ProfileEnabler;
+import com.android.settings.halo.HaloEnabler;
 import com.android.settings.vpn2.VpnSettings;
 import com.android.settings.wifi.WifiEnabler;
 
@@ -609,6 +610,7 @@ public class Settings extends PreferenceActivity
         private final BluetoothEnabler mBluetoothEnabler;
         private final TRDSEnabler mTRDSEnabler;
         private final ProfileEnabler mProfileEnabler;
+        private final HaloEnabler mHALOEnabler;
         private AuthenticatorHelper mAuthHelper;
 
         private static class HeaderViewHolder {
@@ -626,7 +628,8 @@ public class Settings extends PreferenceActivity
             } else if (header.id == R.id.wifi_settings
                      || header.id == R.id.bluetooth_settings
                      || header.id == R.id.trds_settings
-                     || header.id == R.id.profiles_settings) {
+                     || header.id == R.id.profiles_settings
+                     || header.id == R.id.halo_settings) {
                 return HEADER_TYPE_SWITCH;
             } else {
                 return HEADER_TYPE_NORMAL;
@@ -672,6 +675,7 @@ public class Settings extends PreferenceActivity
             mBluetoothEnabler = new BluetoothEnabler(context, new Switch(context));
             mTRDSEnabler = new TRDSEnabler(context, new Switch(context));
             mProfileEnabler = new ProfileEnabler(context, new Switch(context));
+            mHALOEnabler = new HaloEnabler(context, new Switch(context));
         }
 
         @Override
@@ -735,6 +739,8 @@ public class Settings extends PreferenceActivity
                         mTRDSEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.profiles_settings) {
                         mProfileEnabler.setSwitch(holder.switch_);
+                    } else if (header.id == R.id.halo_settings) {
+                        mHALOEnabler.setSwitch(holder.switch_);
                     }
                     // No break, fall through on purpose to update common fields
 
@@ -773,6 +779,7 @@ public class Settings extends PreferenceActivity
             mBluetoothEnabler.resume();
             mTRDSEnabler.resume();
             mProfileEnabler.resume();
+            mHALOEnabler.resume();
         }
 
         public void pause() {
@@ -780,6 +787,7 @@ public class Settings extends PreferenceActivity
             mBluetoothEnabler.pause();
             mTRDSEnabler.pause();
             mProfileEnabler.pause();
+            mHALOEnabler.pause();
         }
     }
 
@@ -882,4 +890,7 @@ public class Settings extends PreferenceActivity
     public static class DreamSettingsActivity extends Settings { /* empty */ }
     public static class QuietHoursSettingsActivity extends Settings { /* empty */ }
     public static class ProfilesSettingsActivity extends Settings { /* empty */ }
+    public static class HaloSettingsActivity extends Settings { /* empty */ }
+    public static class ApnSettingsActivity extends Settings { /* empty */ }
+    public static class ApnEditorActivity extends Settings { /* empty */ }
 }
