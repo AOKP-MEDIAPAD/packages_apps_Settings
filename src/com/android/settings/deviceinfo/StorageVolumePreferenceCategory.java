@@ -30,6 +30,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.RemoteException;
 import android.os.UserManager;
+import android.os.SystemProperties;
 import android.os.storage.StorageManager;
 import android.os.storage.StorageVolume;
 import android.preference.Preference;
@@ -235,7 +236,12 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory {
     private void updatePreferencesFromState() {
         // Only update for physical volumes
         if (mVolume == null) return;
-
+        //EXT INTERNAL FC HACK
+        //
+		if(mVolume.getPath().equals("/storage/usbdisk0")
+			&& SystemProperties.get("persist.extinternal", "0").equals("1")
+		) return;
+		
         mMountTogglePreference.setEnabled(true);
 
         final String state = mStorageManager.getVolumeState(mVolume.getPath());
